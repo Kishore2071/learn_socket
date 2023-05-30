@@ -1,13 +1,25 @@
 from subprocess import Popen,STDOUT, PIPE
+from threading import Thread
 
-p=Popen(['bc','-q','-i'],stdout=PIPE,stdin=PIPE,stderr=PIPE,shell=True)
+class ProcessOutputThread(Thread):
+    def __init__(self,proc):
+        Thread.__init__(self)
+        self.proc = proc
 
-while True:
-    if p.poll() is None:
-        query = input('> ')
-        query = query + "\n"
-        result = p.communicate(query.encode())
-        print(result[0].rstrip())
-    else:
-        print("Poll is not valid")
-        break
+    def run(self):
+        while not self.proc.stdout.closed:
+            print(self.proc.stdout.readline().decode().rstrip())
+
+p = Popen(['bc','-q','-i'],stdout=PIPE,stdin=PIPE,stderr=PIPE,shell=True)
+output = ProcessOutputThread(p)
+output.start()
+
+while not p.stdout.closed:
+    query = input()
+    if query == 'quit' or query == 'exit':
+        p.communicate(query.encode(),timeout=1)
+        if p.poll() is not None:
+            break
+    query = query + "\n"
+    p.stdin.write(query.encode())
+    p.stdin.flush()
