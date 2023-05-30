@@ -10,16 +10,21 @@ s.listen()
 
 conn,addr = s.accept()
 
+
+
 print('client connected: ', addr)
 
 while True:
     data=conn.recv(1024)
-    print("client input:" + data.decode())
+    data= data.decode()
+    print("client input:" + data)
     if not data:
         break
-    elif data.decode()=="quit":
+    elif data=="quit":
         print("Exiting...")
         break
-
+    else:
+        data = data + 'Data changes by server'
+        s.sendall(data.encode())
 conn.close()
 s.close()

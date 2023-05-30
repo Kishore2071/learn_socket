@@ -9,10 +9,11 @@ s.connect((HOST, PORT))
 print('Client connected.')
 
 while True:
-    user_input = str(input())
+    user_input = str(input("> "))
     if not user_input:
         break
     else:
         s.sendall(user_input.encode())
-
+        data = s.recv(1024)
+        print("Data from Server: " , data.decode())
 s.close()
