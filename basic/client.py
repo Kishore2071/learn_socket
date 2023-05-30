@@ -9,10 +9,10 @@ s.connect((HOST, PORT))
 print('Client connected.')
 
 while True:
-    user_input = str(input())  # convert input to string
-    if not user_input:  # i.e. enter key pressed
+    user_input = str(input())
+    if not user_input:
         break
     else:
-        s.sendall(user_input.encode())  # encode needed to transform string to bytes
+        s.sendall(user_input.encode())
 
 s.close()
