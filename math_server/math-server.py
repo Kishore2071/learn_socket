@@ -62,7 +62,7 @@ class MathServerCommunicationThread(Thread):
 
 
 HOST = ''
-PORT = 3074
+PORT = 1234
 
 ## SESSION LAYER 5
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
