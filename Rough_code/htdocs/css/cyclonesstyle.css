@@ -1,0 +1,401 @@
+*
+{
+  
+  padding:0;
+  margin:0;
+}
+body 
+{
+  background-color:white;
+  width:100%;
+}
+
+ .head-image img
+ {
+  width:100%;
+  padding:0px;
+   
+ }
+
+
+
+ .header ul
+{
+
+   display:inline-flex;
+   margin-top:0px;
+   background-color:#033D0B;
+   width:100%;
+   list-style-type:none;
+
+
+   }
+ 
+
+.header ul li
+{
+   margin-left:10px;
+   margin:05px;
+   padding:08px;
+   margin-right:30px;
+
+}
+ .header ul li a
+{   
+
+  text-decoration:none;
+  font-size:26px;
+  color:white;
+}
+ 
+ .header ul li a:hover {
+  color:green;
+    border-radius:5px;
+     }
+
+.header .fa
+{
+   margin-right:8px;
+}    
+.subheader1
+{
+   display:none;
+    
+   
+}
+.header ul li:hover .subheader1 
+{
+   display:block;
+   position:absolute;
+   margin-top:0px;
+   margin-left:-25px;
+}
+.header ul li:hover .subheader1 ul
+{
+  display:block;
+  margin:10px;
+
+}
+.header ul li:hover .subheader1 ul li
+{
+  width:150px;
+  padding:8px;
+  border-bottom: 1px dotted #fff;
+  background:transparent;
+  border-radius:5px;
+  text-align:left; 
+}
+.header ul li:hover .subheader1 ul li a
+{
+  font-size:20px;
+}
+
+.header ul li:hover .subheader1 ul li:last-child
+{
+
+  border-bottom:none;
+}
+.header ul li:hover .subheader1 ul li a:hover
+
+{
+   
+  color:green;
+}
+.fa-angle-right
+{
+ float:right;
+}
+.subheader2
+{
+  display:none;
+}
+.hover-me:hover .subheader2
+{
+  position:absolute;
+  display:block;
+  margin-top:-35px;
+  margin-left:155px;
+
+
+}
+.subheader3
+{
+  display:none;
+}
+.hover-me:hover .subheader3
+{
+  position:absolute;
+  display:block;
+  margin-top:-35px;
+  margin-left:155px;
+
+
+}
+   
+
+     /*----------cyclones image section---------------*/
+
+    .cyclones-image img
+    {
+     
+     width:100%;
+     height:250px;
+
+    }
+
+   
+
+   /*--------Scrolling News Bar---------*/
+   .ticker
+   {
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    height:50px;
+    margin:0 auto;
+   }
+   .news
+   {
+    width:85%;
+    background:#f54251;
+    position:0 2%;
+    
+    }
+.news h6
+{
+   margin-top:10px;
+   font-size:20px;
+   font-family:cursive;
+
+
+}
+
+
+.title
+{
+  width:15%;
+  text-align:center;
+  background:red;
+  position:relative;
+}
+.title h3
+{
+  text-align:center;
+  margin-top:13px;
+  color:white;
+  font-family:Georgia, serif;
+  
+}
+
+    /*----------cyclones Information----------------*/
+
+      .box
+   {
+    width:250px;
+    height:300px;
+    margin:20px auto;
+    margin-left:10px;
+    float:left;
+    box-shadow: 1px 1px 10px 2px #333;
+    border-radius:5px;
+    overflow:hidden;
+
+   }
+   .box-title
+   {
+    background-color:brown;
+    color:white;
+    padding:10px 0px;
+
+   }
+
+
+  .box-heading h4
+  {
+    margin-top:10px;
+    text-align:center;
+    font-size:20px;
+    font-family:cursive; 
+    padding:5px;
+    border-bottom:dotted;
+    color:#4389b5;
+    } 
+
+
+    .cyclones-information
+    {
+
+      margin-top:50px;
+      margin-left:25%;
+      margin-right:5%;
+      border-style:solid;
+    }
+
+    .title1
+    {
+      margin-top:10px;
+      margin-left:10%;
+      color:#278dc2;
+      font-size:20px;
+      font-family:serif;
+     
+     }
+
+    .cyclones-information1
+    {
+ 
+     margin-left:5px;
+     padding:10px;
+ 
+    }
+
+     
+    .cyclones-information1 p
+    {
+      font-size:20px;
+      color:#6b696a;
+
+    }
+
+    .title2
+    {
+      margin-top:10px;
+      font-size:20px;
+      margin-left:8%;
+      font-family:serif;
+
+
+
+    }
+ 
+     .paragraph2
+     {
+      margin-top:15px;
+     }
+
+      
+
+
+         .table
+     {
+      margin-top:50px;
+     }
+
+
+    .table-box
+    {
+      margin:50px auto;
+    }
+
+    .table-row
+    {
+
+      display:table;
+      width:78%;
+      margin: 10px auto;
+      font-family: sans-serif;
+      background:transparent;
+      padding: 2px 0;
+      color: #555;
+      font-size:15px;
+      box-shadow: 0 1px 4px 0 ;
+    }
+    
+    .table-cell
+    {
+      display:table-cell;
+      width: 15%;
+      text-align:center;
+      padding: 2px 0;
+      border-right: 1px solid #d6d4d4;
+      vertical-align: middle;
+      font-weight:300;
+      
+    }
+
+    .table-head
+    {
+      background: #8565f7;
+      box-shadow: none
+      color: #fff;
+      font-weight:600;
+    }
+
+    .table-head .table-cell
+    {
+      border-right: none;
+
+  }
+    .last-cell
+    {
+
+      border-right:none;
+    }
+
+
+/*-------------------footer-------------------*/
+
+ .footer
+ {
+  background-color:#033D0B;
+  width:100%;
+  height:auto;
+  clear: both;
+  background:#272727;
+ 
+  
+ }
+.footer-icons
+{
+  width:100%;
+  height: auto;
+  margin: auto; 
+}
+.footer-icons ul
+{
+  margin:0px;
+  padding:0px;
+ text-align: center;
+}
+
+.footer-icons ul li
+{
+  display: inline-block;
+  width: 50px;
+  height:50px;
+  margin: 10px 10px; 
+  border-radius: 100%;
+  background: #32cd32;
+}
+.footer-icons ul li a
+{
+  color: #272727;
+  font-size: 25px;
+}
+.footer-icons ul li a i
+{
+
+line-height: 50px;
+
+}
+.footer-myname
+{
+  width: 100%;
+  height:auto;
+   
+  background: #32cd32;
+   
+}
+.footer-myname p
+{
+  font-family:Times New Roman Georgia;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600px;
+  letter-spacing: 3px;
+  padding: 10px;
+}
+
+     
+
