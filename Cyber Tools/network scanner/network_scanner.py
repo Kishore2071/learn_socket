@@ -1,4 +1,14 @@
 import scapy.all as scapy
+import optparse
+
+def get_options():
+    parser = optparse.OptionParser()
+    parser.add_option("-r","--range",dest="range",help="Used to select range")
+    (options,arguments) = parser.parse_args()
+    if not options.range:
+        parser.error("range not specified! use --help to get more info")
+    else:
+        return options
 
 def scan(ip):
     arp_request = scapy.ARP(pdst=ip)
@@ -16,6 +26,8 @@ def print_results(result_list):
     print("IP\t\t\tMAC Address\n----------------------------------------")
     for result in result_list:
         print(result["ip"]+"\t\t"+result["mac"])    
+
+options = get_options()    
     
-result_dic=scan("192.168.1.1/24")
+result_dic=scan(options.range)
 print_results(result_dic)
